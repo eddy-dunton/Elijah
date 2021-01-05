@@ -11,13 +11,15 @@
 #include <SPI.h>
 #include <SdFat.h>
 
-const int LED_PIN = 2;
+//Constants
 const char WRITES_PER_FLUSH = 16;
-
 const int DEBUG_BAUD = 115200;
 const int GPS_BAUD = 19200;
 
-const int RXPin = 3, TXPin = 4;
+//PINS
+const int LED_PIN = 2;
+const int PIN_RX = 3, PIN_TX = 4;
+const int PIN_CS = 8;
 
 //SD card handler
 SdFat sd;
@@ -27,7 +29,7 @@ SdFile file;
 TinyGPSPlus gps;
 //Software serial used to communicate with GPS
 //TODO: Move the GPS to regular serial for final version
-SoftwareSerial ss(RXPin, TXPin);
+SoftwareSerial ss(PIN_RX, PIN_TX);
 //Name of the session file
 //const char stuff seems odd
 //But is necessary for sdfat to not throw a fit
@@ -53,7 +55,7 @@ void setup() {
   ss.begin(GPS_BAUD);
 
   //Checks that valid SD is found
-  if (!sd.begin(8)) {
+  if (!sd.begin(PIN_CS)) {
     //If not: complains and stops
     #if DEBUG
       Serial.println("SD Failed");
