@@ -201,11 +201,13 @@ class ViewPane extends JSplitPane implements Painter<JXMapViewer> {
         //customize the plot with renderers
         XYItemRenderer renderer = new StandardXYItemRenderer(StandardXYItemRenderer.LINES);
         renderer.setDefaultToolTipGenerator(new StandardXYToolTipGenerator());
+        renderer.setSeriesStroke(0, new BasicStroke(0.5f));
         plot.setRenderer(0, renderer);
 
         renderer = new StandardXYItemRenderer(StandardXYItemRenderer.LINES);
         renderer.setDefaultToolTipGenerator(new StandardXYToolTipGenerator());
         renderer.setSeriesPaint(0, Color.BLUE);
+		renderer.setSeriesStroke(0, new BasicStroke(0.5f));
         plot.setRenderer(1, renderer);
 
         // Set up time axis
