@@ -21,6 +21,8 @@ Simply download 'Elijah.jar' from the latest release and run with Java 8 or abov
 - It is recommended to run it at least once in debug mode (See below)
 3. Power Arduino
 
+The schematic can be opened using Fritzing
+
 Often it can seem like the system is not working if only plugged in for a few moments, however it may just be taking its time getting GPS Lock
 
 #### If other components or boards are used:
