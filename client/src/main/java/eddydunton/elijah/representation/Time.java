@@ -24,7 +24,7 @@ public class Time extends Representation {
 	
 	public static float secondsFromStart(Lap l, Point p) {
 		Duration diff = Duration.between(l.startTime(), p.time);
-		return diff.getSeconds() + (diff.getNano() / 1000000000);
+		return diff.getSeconds() + (diff.getNano() / 1000000000f);
 	}
 	
 	@Override
