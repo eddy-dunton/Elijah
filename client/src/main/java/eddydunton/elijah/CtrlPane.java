@@ -295,7 +295,7 @@ public class CtrlPane extends JPanel implements ActionListener, ChangeListener {
 				this.paTags.add(new JLabel("Interval"));
 
 				// Interval between tags
-				this.spTagsInt = new JSpinner(new SpinnerNumberModel(10, 0, 100, 1));
+				this.spTagsInt = new JSpinner(new SpinnerNumberModel(9, 0, 100, 1));
 				this.spTagsInt.addChangeListener(this);
 				this.paTags.add(spTagsInt);
 				this.trView.add(this.spTagsInt);
