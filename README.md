@@ -28,7 +28,7 @@ Often it can seem like the system is not working if only plugged in for a few mo
 #### If other components or boards are used:
 1. Wire SD module to SPI pins
 2. Wire GPS to UART pins
-3. Edit pins in code to the values of the new pins
+3. Edit pins at the top of 'tracker.ino' to the values of the new pins
 4. Load editted 'tracker.ino'
 - It is definitely recommended to run it in debug mode at least once here
 5. Power Arduino
