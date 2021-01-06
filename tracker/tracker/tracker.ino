@@ -49,7 +49,7 @@ void setup() {
   //Starts communication with computer
   #if DEBUG
     Serial.begin(DEBUG_BAUD);
-    Serial.println("Lap Tracker by Eddy Dunton");
+    Serial.println("Elijah by Eddy Dunton");
   #endif
   //Starts communication with GPS 
   ss.begin(GPS_BAUD);
@@ -122,21 +122,25 @@ void loop() {
 }
 
 /*
- * Returns file name for session
+ * Sets global filename
  * File will always be in the root directory
- * Starts with session_a.tel
- *  then increments the 'a' char, will probably break after about 30 increments
- *  as you'll end up back at the start with an int overflow and I can't imagine 
- *  you're allowed to whack (null) in a filename
- * Returns a char* because sdfat needs a char* for filename
- *  else it cries
+ * Starts with session_aaa.tel
+ * then increments the final 'a' char, after this reaches it moves back to the next 'a' and increments that
+ * as you'll end up back at the start with an int overflow and I can't imagine 
+ * you're allowed to whack (null) in a filename
  */
 void getFileName() { 
   //Starting filename
-  fileName = "session_a.tel";
+  fileName = "session_aaa.tel";
   //Increments if taken
   while (sd.exists(fileName)) {
-    fileName[8] ++;
+    char c = 10;
+    fileName[c] ++;
+    while (fileName[c] > 'z') {
+      fileName[c] = 'a';
+      c --;
+      fileName[c] ++;
+    }
   }
   
   #if DEBUG
