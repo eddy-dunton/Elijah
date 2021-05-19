@@ -6,6 +6,10 @@ Designed to be used on the track, although also works on the street
 
 Uses a lightweight Arduino system to on the car / bike in order to live track the vehicle, then a Java program to read the data 
 
+Named after the Prophet Elijah, who supposedly drove a flaming chariot
+
+This repo is only a code dump, development is actually done separately
+
 ## Installation
 
 ### Java
