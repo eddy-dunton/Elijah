@@ -73,5 +73,9 @@ Debug Mode comes at the cost of performance, size and power as extra code has to
 
 Arduino libs can be found from the Arduino Library Manager
 
-##License
+## Screenshots
+
+![Screenshot 2021-05-19 182307](https://user-images.githubusercontent.com/42977035/118857213-b2a79400-b8cf-11eb-805f-c3d20d943aeb.png)
+
+## License
 Licensed under GNU GPLv3, see LICENSE for details
